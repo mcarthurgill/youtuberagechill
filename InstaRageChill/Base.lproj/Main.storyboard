@@ -11,15 +11,18 @@
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="z0k-TG-163" kind="relationship" relationship="rootViewController" id="xqn-HY-xrz"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
-        <!--View Controller-->
+        <!--Master View Controller - Youtube Browser-->
         <scene sceneID="hQX-ZJ-lbd">
             <objects>
-                <viewController id="z0k-TG-163" sceneMemberID="viewController">
+                <viewController id="z0k-TG-163" customClass="RCMasterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="od6-gq-A6R"/>
                         <viewControllerLayoutGuide type="bottom" id="C0e-mx-VQ2"/>
@@ -27,8 +30,18 @@
                     <view key="view" contentMode="scaleToFill" id="ab6-7s-1Pj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epZ-es-are" customClass="MGScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Youtube Browser" id="57g-vF-xNF"/>
+                    <connections>
+                        <outlet property="scroller" destination="epZ-es-are" id="SiM-ay-cTS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfG-bt-iHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

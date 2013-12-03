@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RCMasterViewController : UITableViewController
+@interface RCMasterViewController : UIViewController
 
 @end
