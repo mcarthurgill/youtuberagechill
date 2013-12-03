@@ -9,43 +9,51 @@
 #import "RCDetailViewController.h"
 
 @interface RCDetailViewController ()
-- (void)configureView;
+{
+    IBOutlet UIWebView* webView;
+}
+
 @end
 
 @implementation RCDetailViewController
 
-#pragma mark - Managing the detail item
-
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
-    }
-}
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
-}
-
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
-}
+    RCVideoLink* link = self.video.link[0];
+    
+    NSString* videoId = nil;
+    
+    NSArray *queryComponents = [link.href.query componentsSeparatedByString:@"&amp;"];
+    for (NSString* pair in queryComponents) {
+        NSArray* pairComponents = [pair componentsSeparatedByString:@"="];
+        if ([pairComponents[0] isEqualToString:@"v"]) {
+            //fetch the video id and exit the loop
+            videoId = pairComponents[1];
+            break;
+        }
+    }
+    
+    if (!videoId) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Video ID not found in video URL" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles: nil]show];
+        return;
+    }
+    
+    NSLog(@"Embed video id: %@", videoId);
+    
+    NSString *htmlString = @"<html><head>\
+    <meta name = \"viewport\" content = \"initial-scale = 1.0, user-scalable = no, width = 320\"/></head>\
+    <body style=\"background:#000;margin-top:0px;margin-left:0px\">\
+    <iframe id=\"ytplayer\" type=\"text/html\" width=\"320\" height=\"240\"\
+    src=\"http://www.youtube.com/embed/%@?autoplay=1\"\
+    frameborder=\"0\"/>\
+    </body></html>";
+    
+    htmlString = [NSString stringWithFormat:htmlString, videoId, videoId];
+    
+    [webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:@"http://www.youtube.com"]];
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 @end
