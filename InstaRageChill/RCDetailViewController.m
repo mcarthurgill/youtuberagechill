@@ -19,19 +19,8 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    RCVideoLink* link = self.video.link[0];
     
-    NSString* videoId = nil;
-    
-    NSArray *queryComponents = [link.href.query componentsSeparatedByString:@"&"];
-    for (NSString* pair in queryComponents) {
-        NSArray* pairComponents = [pair componentsSeparatedByString:@"="];
-        if ([pairComponents[0] isEqualToString:@"v"]) {
-            //fetch the video id and exit the loop
-            videoId = pairComponents[1];
-            break;
-        }
-    }
+    NSString* videoId = self.video.link;
     
     if (!videoId) {
         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Video ID not found in video URL" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles: nil]show];

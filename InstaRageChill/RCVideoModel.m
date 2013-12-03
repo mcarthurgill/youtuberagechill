@@ -13,8 +13,9 @@
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
-                                                       @"media$group.media$thumbnail":@"thumbnail",
-                                                       @"title.$t": @"title",
+                                                       @"snippet.thumbnails.default.url":@"thumbnail",
+                                                       @"snippet.title": @"title",
+                                                       @"id.videoId": @"link"
                                                        }];
 }
 

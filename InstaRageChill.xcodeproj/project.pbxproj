@@ -53,8 +53,6 @@
 		7697BD8B184D4F27004C76A4 /* MGTableBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 7697BD6F184D4F27004C76A4 /* MGTableBox.m */; };
 		7697BD8C184D4F27004C76A4 /* MGTableBoxStyled.m in Sources */ = {isa = PBXBuildFile; fileRef = 7697BD71184D4F27004C76A4 /* MGTableBoxStyled.m */; };
 		7697BD90184D78B0004C76A4 /* RCVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7697BD8F184D78B0004C76A4 /* RCVideoModel.m */; };
-		7697BD93184D79C4004C76A4 /* RCVideoLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 7697BD92184D79C4004C76A4 /* RCVideoLink.m */; };
-		7697BD96184D7AA3004C76A4 /* RCMediaThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = 7697BD95184D7AA3004C76A4 /* RCMediaThumbnail.m */; };
 		7697BD99184D7D8F004C76A4 /* PhotoBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 7697BD98184D7D8F004C76A4 /* PhotoBox.m */; };
 /* End PBXBuildFile section */
 
@@ -153,10 +151,6 @@
 		7697BD71184D4F27004C76A4 /* MGTableBoxStyled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTableBoxStyled.m; sourceTree = "<group>"; };
 		7697BD8E184D78B0004C76A4 /* RCVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCVideoModel.h; sourceTree = "<group>"; };
 		7697BD8F184D78B0004C76A4 /* RCVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCVideoModel.m; sourceTree = "<group>"; };
-		7697BD91184D79C4004C76A4 /* RCVideoLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCVideoLink.h; sourceTree = "<group>"; };
-		7697BD92184D79C4004C76A4 /* RCVideoLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCVideoLink.m; sourceTree = "<group>"; };
-		7697BD94184D7AA3004C76A4 /* RCMediaThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMediaThumbnail.h; sourceTree = "<group>"; };
-		7697BD95184D7AA3004C76A4 /* RCMediaThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMediaThumbnail.m; sourceTree = "<group>"; };
 		7697BD97184D7D8F004C76A4 /* PhotoBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoBox.h; path = ../PhotoBox.h; sourceTree = "<group>"; };
 		7697BD98184D7D8F004C76A4 /* PhotoBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoBox.m; path = ../PhotoBox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -387,10 +381,6 @@
 			children = (
 				7697BD8E184D78B0004C76A4 /* RCVideoModel.h */,
 				7697BD8F184D78B0004C76A4 /* RCVideoModel.m */,
-				7697BD94184D7AA3004C76A4 /* RCMediaThumbnail.h */,
-				7697BD95184D7AA3004C76A4 /* RCMediaThumbnail.m */,
-				7697BD91184D79C4004C76A4 /* RCVideoLink.h */,
-				7697BD92184D79C4004C76A4 /* RCVideoLink.m */,
 			);
 			name = YouTubeModels;
 			sourceTree = "<group>";
@@ -506,9 +496,7 @@
 				7697BD06184D452F004C76A4 /* RCAppDelegate.m in Sources */,
 				7697BD7A184D4F27004C76A4 /* JSONKeyMapper.m in Sources */,
 				7697BD83184D4F27004C76A4 /* MGBox.m in Sources */,
-				7697BD96184D7AA3004C76A4 /* RCMediaThumbnail.m in Sources */,
 				7697BD89184D4F27004C76A4 /* MGMushParser.m in Sources */,
-				7697BD93184D79C4004C76A4 /* RCVideoLink.m in Sources */,
 				7697BD84184D4F27004C76A4 /* MGBoxProvider.m in Sources */,
 				7697BD80184D4F27004C76A4 /* UIResponder+FirstResponder.m in Sources */,
 				7697BD86184D4F27004C76A4 /* MGLayoutManager.m in Sources */,

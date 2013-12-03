@@ -72,13 +72,13 @@
     //URL escape the term
     term = [term stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    NSString* searchCall = [NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/videos?q=%@&max-results=30&alt=json&videoEmbeddable=true&videoSyndicated=true", term];
+    NSString* searchCall = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?q=%@&maxResults=20&videoEmbeddable=true&videoSyndicated=true&part=snippet&type=video&format=1&key=AIzaSyAnRB0cI8KKaA2WHjUlY-2uy85FySbrHQs", term];
     
     [JSONHTTPClient getJSONFromURLWithString: searchCall
                                   completion:^(NSDictionary *json, JSONModelError *err) {
                                       NSLog(@"Got JSON back from Youtube: %@", json);
                                       videos = [RCVideoModel arrayOfModelsFromDictionaries:
-                                                json[@"feed"][@"entry"]
+                                                json[@"items"]
                                                 ];
                                       
                                       if (videos) {
@@ -105,14 +105,15 @@
     //get rid of videos present
     [scroller.boxes removeObjectsInRange:NSMakeRange(1, scroller.boxes.count-1)];
     
+    //add boxes for all videos
     for (int i=0;i<videos.count;i++) {
         
         //get the data
         RCVideoModel* video = videos[i];
-        RCMediaThumbnail* thumb = video.thumbnail[0];
+        NSURL *thumb = [[NSURL alloc] initWithString:video.thumbnail];
         
         //create a photobox box
-        PhotoBox *box = [PhotoBox photoBoxForURL:thumb.url title:video.title];
+        PhotoBox *box = [PhotoBox photoBoxForURL:thumb title:video.title];
         box.onTap = ^{
             [self performSegueWithIdentifier:@"videoViewSegue" sender:video];
         };
