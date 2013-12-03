@@ -7,6 +7,7 @@
 //
 
 #import "RCDetailViewController.h"
+#import "JSONModelLib.h"
 
 @interface RCDetailViewController ()
 
@@ -19,7 +20,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     NSString* videoId = self.video.link;
     
     if (!videoId) {
@@ -63,13 +64,14 @@
     //Enable autoplay
     webView.mediaPlaybackRequiresUserAction = NO;
     
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ragechill.com/embed/%@?width=%f&height=%f", videoId, webView.frame.size.width, webView.frame.size.height]]]];
+    
     //Load the HTML
-    [webView loadRequest:[NSURLRequest requestWithURL:
-                                    [NSURL fileURLWithPath:tmpFile isDirectory:NO]]];
+//    [webView loadRequest:[NSURLRequest requestWithURL:
+//                                    [NSURL fileURLWithPath:tmpFile isDirectory:NO]]];
     //Autoplay doesn't work with loadHTMLString
     //[self.webView loadHTMLString:htmlStr baseURL:nil];
-
-
+    
     
 }
 

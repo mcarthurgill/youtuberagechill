@@ -72,7 +72,7 @@
     //URL escape the term
     term = [term stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    NSString* searchCall = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?q=%@&maxResults=20&videoEmbeddable=true&videoSyndicated=true&part=snippet&type=video&format=1&key=AIzaSyAnRB0cI8KKaA2WHjUlY-2uy85FySbrHQs", term];
+    NSString* searchCall = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?q=%@&maxResults=20&videoSyndicated=true&videoEmbeddable=true&format=5&part=snippet&type=video&safeSearch=none&key=AIzaSyAnRB0cI8KKaA2WHjUlY-2uy85FySbrHQs", term];
     
     [JSONHTTPClient getJSONFromURLWithString: searchCall
                                   completion:^(NSDictionary *json, JSONModelError *err) {

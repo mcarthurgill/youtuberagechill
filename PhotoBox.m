@@ -87,7 +87,7 @@
             return;
         }
         
-        // got the photo, so lets show it
+        // show photo
         UIImage *image = [UIImage imageWithData:data];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
         [self addSubview:imageView];
@@ -105,7 +105,7 @@
         UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0,0,self.frame.size.width,20)];
         label.backgroundColor = [UIColor clearColor];
         label.text = self.titleString;
-        label.font = [UIFont boldSystemFontOfSize:16.0];
+        label.font = [UIFont boldSystemFontOfSize:12.0];
         label.textColor = [UIColor whiteColor];
         [self addSubview:label];
         
