@@ -1,0 +1,54 @@
+<html> 
+<head>
+<style>
+body, div {
+  margin: 0px;
+  padding: 0px;
+}
+#media_area {
+  width: %gpx;
+  height: %gpx;
+}
+</style>
+</head>
+<body style="background:rgba(0,0,0,0);">
+  <div id="media_area"> </div>
+</body>
+<script>
+var ytPlayer = null;
+
+function onYouTubePlayerAPIReady() {
+  ytPlayer = new YT.Player('media_area',
+    {width: '%g', height: '%g', videoId: '%@', playsinline: '1',
+      playerVars: {modestbranding: 1, rel: 0, showinfo:0, playsinline:1},
+      events: {'onReady': onPlayerReady, 'onError': onError, 'onStateChange': onPlayerStateChange}
+    });
+}
+function onPlayerReady(e) {
+  e.target.playVideo();
+}
+function onError(data) {
+}
+var done = false;
+var playingProgram = false;
+function onPlayerStateChange(event) {
+ if (event.data == YT.PlayerState.PLAYING) {
+   window.location = "playingcallback:anything";
+ }
+ if (event.data == YT.PlayerState.PLAYING && !done) {
+   setTimeout(stopVideo, 6000);
+   done = true;
+ }
+ if (event.data == YT.PlayerState.ENDED) {
+   window.location = "callback:anything"; //here's the key
+ }
+ if (event.data == YT.PlayerState.PAUSED) {
+   window.location = "pausedcallback:anything"; //here's the key
+ };
+}
+function stopVideo() {
+ player.stopVideo();
+}
+</script>
+<script src="http://www.youtube.com/player_api"></script>
+</html>

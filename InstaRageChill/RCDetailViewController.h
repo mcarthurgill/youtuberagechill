@@ -13,6 +13,7 @@
 
 
 @property (strong, nonatomic) RCVideoModel* video;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 
 
 @end

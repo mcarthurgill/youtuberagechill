@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76154027184E34A300532774 /* YouTubeTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76154026184E34A300532774 /* YouTubeTemplate.txt */; };
 		7697BCF6184D452F004C76A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7697BCF5184D452F004C76A4 /* Foundation.framework */; };
 		7697BCF8184D452F004C76A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7697BCF7184D452F004C76A4 /* CoreGraphics.framework */; };
 		7697BCFA184D452F004C76A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7697BCF9184D452F004C76A4 /* UIKit.framework */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76154026184E34A300532774 /* YouTubeTemplate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = YouTubeTemplate.txt; sourceTree = "<group>"; };
 		7697BCF2184D452F004C76A4 /* InstaRageChill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaRageChill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7697BCF5184D452F004C76A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7697BCF7184D452F004C76A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -225,6 +227,7 @@
 				7697BD4B184D4F27004C76A4 /* MGBoxKit */,
 				7697BD97184D7D8F004C76A4 /* PhotoBox.h */,
 				7697BD98184D7D8F004C76A4 /* PhotoBox.m */,
+				76154026184E34A300532774 /* YouTubeTemplate.txt */,
 				7697BD04184D452F004C76A4 /* RCAppDelegate.h */,
 				7697BD05184D452F004C76A4 /* RCAppDelegate.m */,
 				7697BD07184D452F004C76A4 /* Main.storyboard */,
@@ -471,6 +474,7 @@
 			files = (
 				7697BD11184D452F004C76A4 /* Images.xcassets in Resources */,
 				7697BD00184D452F004C76A4 /* InfoPlist.strings in Resources */,
+				76154027184E34A300532774 /* YouTubeTemplate.txt in Resources */,
 				7697BD09184D452F004C76A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,6 +737,7 @@
 				7697BD29184D452F004C76A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7697BD2A184D452F004C76A4 /* Build configuration list for PBXNativeTarget "InstaRageChillTests" */ = {
 			isa = XCConfigurationList;
@@ -741,6 +746,7 @@
 				7697BD2C184D452F004C76A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
